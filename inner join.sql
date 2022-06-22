@@ -1,0 +1,1 @@
+select  SalesDetailID,ItemID,Qty,Rate,Amount from SalesDetail  inner join   SalesEntry on SalesDetail.SalesID=SalesEntry.SalesID
