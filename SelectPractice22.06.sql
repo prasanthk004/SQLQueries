@@ -2,7 +2,7 @@
 
 
 
-
+use DBLearn
 
 
 
@@ -19,12 +19,36 @@
 --Select *from SalesView where CusName in( Select DISTINCT   CusName  from SalesView where Amount>(Select Avg(Amount) from Sales ) )
 
  --Item cat Wise Sales--
- Select   ItemCatName,Sum(Amount) TotalSales from SalesView   group by ItemCatName
+ --Select   ItemCatName,Sum(Amount) TotalSales from SalesView   group by ItemCatName
 
 
   --Item   Wise Sales--
 
- Select ItemName,Sum(Amount) TotalSales from SalesView group by ItemName
+ --Select ItemName,Sum(Amount) TotalSales from SalesView group by ItemName
+
+ -- TOP Sold product based on amount
+
+--- Select top 4 ItemName,Sum(Amount) TotalPurchase from SalesView group by ItemName order by TotalPurchase desc
+
+--Top Sold based on qty
+--select top 3 ItemName , Sum(Qty) as TotalQty from SalesView group by ItemName 
+
+-- IdentifytheCity which have no purchase
+
+--Select * from City where cityid not in (Select distinct  CityID     from SalesView where year(BillDate)=2022)
+
+
+-- Top SalesYear
+Select YEAR(BillDate) as SalesYear from SalesView group by Year(BillDate)
+
+--Top SoldQty year
+
+Select YEAR(BillDate) as YearOfSales , ItemName, Sum(qty) QTY from SalesView group by Year(BillDate) , ItemName  order by Year(BillDate) desc , ItemName
+
+
+
+
+
 
 
 										
