@@ -45,7 +45,7 @@ Select YEAR(BillDate) as SalesYear from SalesView group by Year(BillDate)
 
 Select YEAR(BillDate) as YearOfSales , ItemName, Sum(qty) QTY from SalesView group by Year(BillDate) , ItemName  order by Year(BillDate) desc , ItemName
 
-
+---FINALIZE--
 
 
 
