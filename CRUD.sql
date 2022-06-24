@@ -18,6 +18,8 @@ Update City Set CityName='Andheri'
 --Update Sales Set Rate=i.unitRate from Sales s inner join Item i on s.ItemID=i.itemID
 --Update Sales Set Rate=i.unitRate from Sales s  inner join Item i on s.ItemID=i.ItemID
 
-Update Sales Set Amount=s.qty*s.Rate from Sales s 
+--Updated data based on another coloum
+--Update Sales Set Amount=Qty*Rate
+Select S.SalesID,S.ItemID,s.Rate,i.ItemID,i.unitRate,s.Qty,s.Amount from Sales  s inner join Item i on s.ItemID=i.ItemID
 
-Select S.SalesID,S.ItemID,s.Rate,i.ItemID,i.unitRate,s.Amount from Sales  s inner join Item i on s.ItemID=i.ItemID
+
