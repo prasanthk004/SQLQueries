@@ -51,5 +51,7 @@ Select YEAR(BillDate) as YearOfSales , ItemName, Sum(qty) QTY from SalesView gro
 
 
 
+
+
 										
 									 
