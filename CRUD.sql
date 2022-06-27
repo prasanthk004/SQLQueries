@@ -20,6 +20,9 @@ Update City Set CityName='Andheri'
 
 --Updated data based on another coloum
 --Update Sales Set Amount=Qty*Rate
+
+-- DELETE --
+delete from Sales Where SalesID=16
 Select S.SalesID,S.ItemID,s.Rate,i.ItemID,i.unitRate,s.Qty,s.Amount from Sales  s inner join Item i on s.ItemID=i.ItemID
 
 
